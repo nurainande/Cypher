@@ -1,25 +1,3 @@
-// import {
-//   MacbookImage,
-//   PlaystationImage
-// } from "../assets";
-
-// const SummerBanner = () => {
-//   return (
-//     <section className="summerbanner">
-//       <img src={PlaystationImage} alt="" />
-//       <div className="flex justify-center items-center">
-//         <h1 className="text-3xl font-bold">Big Summer Sale</h1>
-//         <p>Good taste is not expensive anywhere</p>
-//         <button>Shop Now</button>
-//       </div>
-//       <img src={MacbookImage} alt="" />
-//     </section>
-//   );
-// };
-
-// export default SummerBanner;
-
-
 import { MacbookImage, PlaystationImage } from "../../assets";
 
 const SummerBanner = () => {

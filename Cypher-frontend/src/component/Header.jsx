@@ -4,6 +4,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import { CiUser } from "react-icons/ci";
 // import { CiHeart } from "react-icons/ci";
 import { HiMenu, HiX } from "react-icons/hi";
+import {Link} from "react-router-dom"
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,10 +12,12 @@ const Header = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-// fixed w-[100%]
+
   return (
     <header className="bg-white shadow-md py-4 px-9 md:px-24 flex items-center justify-between fixed w-[100%]">
-      <h3 className="logo text-2xl font-bold text-gray-800">cypher</h3>
+      <h3 className="logo text-2xl font-bold text-gray-800">
+        <Link to="/">cypher</Link>
+      </h3>
 
       <div className="search flex items-center border border-gray-300 rounded-md px-3 py-1 w-1/5 max-w-md">
         <CiSearch size="24" className="text-gray-600" />
@@ -50,9 +53,9 @@ const Header = () => {
         </div>
         <ul className="flex flex-col md:flex-row gap-4 text-gray-700 p-4 md:p-0">
           <li>
-            <a href="#" className="hover:text-gray-900">
+            <Link to="/" className="hover:text-gray-900">
               Home
-            </a>
+            </Link>
           </li>
           <li>
             <a href="#" className="hover:text-gray-900">
@@ -60,9 +63,9 @@ const Header = () => {
             </a>
           </li>
           <li>
-            <a href="#" className="hover:text-gray-900">
+            <Link to="/product" className="hover:text-gray-900">
               Products
-            </a>
+            </Link>
           </li>
           <li>
             <a href="#" className="hover:text-gray-900">
@@ -78,10 +81,12 @@ const Header = () => {
           size="24"
           className="text-gray-600 cursor-pointer hover:text-gray-900"
         /> */}
-        <FiShoppingCart
-          size="24"
-          className="text-gray-600 cursor-pointer hover:text-gray-900"
-        />
+        <Link to='shopping-cart'>
+          <FiShoppingCart
+            size="24"
+            className="text-gray-600 cursor-pointer hover:text-gray-900"
+          />
+        </Link>
         <CiUser
           size="24"
           className="text-gray-600 cursor-pointer hover:text-gray-900"

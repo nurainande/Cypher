@@ -71,7 +71,7 @@ const Products = () => {
         {appleProducts.map((product) => (
           <li
             key={product.id}
-            className="flex items-center gap-4 bg-white p-4 rounded-md shadow-md"
+            className="flex items-center flex-col gap-4 bg-white p-4 rounded-md shadow-md"
           >
             <img
               src={product.image}
@@ -79,14 +79,14 @@ const Products = () => {
               className="w-20 h-20 rounded-md object-cover"
             />
             <div>
-              <h2 className="text-sm font-medium">{product.name}</h2>
+              <h2 className="text-sm text-center font-medium">{product.name}</h2>
               <p className="text-gray-600 text-xs">{product.description}</p>
-              <div className="flex gap-2 items-center mt-2">
+              <div className="flex flex-col gap-2 items-center mt-2">
                 <span className="text-gray-600 font-semibold">
                   {product.price}
                 </span>
                 <button className="bg-black text-white text-sm px-4 py-2 rounded-md">
-                  Add to Cart
+                  Buy
                 </button>
               </div>
             </div>
