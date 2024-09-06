@@ -1,4 +1,5 @@
 import  { useState } from 'react';
+import {Link} from "react-router-dom"
 
 const ShoppingCartPage = () => {
   // Sample data for cart items
@@ -47,7 +48,10 @@ const ShoppingCartPage = () => {
         {/* Cart Items List */}
         <div className="md:col-span-2 max-w-2xl">
           {cartItems.map((item) => (
-            <div key={item.id} className="flex items-center justify-between border-b pb-4 mb-4">
+            <div
+              key={item.id}
+              className="flex items-center justify-between border-b pb-4 mb-4"
+            >
               <div className="flex items-center gap-4">
                 <img
                   src={item.image}
@@ -105,9 +109,11 @@ const ShoppingCartPage = () => {
             <span>${(totalPrice + totalPrice * 0.1).toFixed(2)}</span>
           </div>
 
-          <button className="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300">
-            Proceed to Checkout
-          </button>
+          <Link to='/checkout'>
+            <button className="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300">
+              Proceed to Checkout
+            </button>
+          </Link>
         </div>
       </div>
     </div>

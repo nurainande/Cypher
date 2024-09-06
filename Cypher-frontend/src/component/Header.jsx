@@ -5,13 +5,17 @@ import { CiUser } from "react-icons/ci";
 // import { CiHeart } from "react-icons/ci";
 import { HiMenu, HiX } from "react-icons/hi";
 import {Link} from "react-router-dom"
+import SigninAndupToggle from "./RegAndLoginToggle";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isRegAndLoginToggle, setIsRegAndLoginToggle] = useState(false);
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  
 
   return (
     <header className="bg-white shadow-md py-4 px-9 md:px-24 flex items-center justify-between fixed w-[100%]">
@@ -90,8 +94,10 @@ const Header = () => {
         <CiUser
           size="24"
           className="text-gray-600 cursor-pointer hover:text-gray-900"
+          onClick={()=>setIsRegAndLoginToggle((isRegAndLoginToggle)=>!isRegAndLoginToggle)}
         />
       </div>
+      {isRegAndLoginToggle && <SigninAndupToggle/>}
     </header>
   );
 };
