@@ -9,6 +9,10 @@ import RegisterPage from "../pages/RegisterPage";
 import LoginPage from "../pages/LoginPage";
 import OrderConfirmationPage from "../pages/OrderConfirmationPage";
 import OrderHistoryPage from "../pages/OrderHistoryPage";
+import AdminPanelPage from "../pages/Admin/AdminPanelPage";
+import UserManagementSection from "../pages/Admin/UserManagementSection";
+import ProductManagementSection from "../pages/Admin/ProductManagementSection";
+import OrderManagementSection from "../pages/Admin/OrderManagementSection";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +55,25 @@ const router = createBrowserRouter([
         path: "login",
         element: <LoginPage />,
       },
+      {
+        path:"admin",
+        element: <AdminPanelPage/>,
+        children: [
+          {
+            path: "users",
+            element: <UserManagementSection/>,
+          }
+          ,
+          {
+            path: "products",
+            element: <ProductManagementSection/>,
+          },
+          {
+            path: "orders",
+            element: <OrderManagementSection/>,
+          }
+        ]
+      }
     ],
   },
 ]);
